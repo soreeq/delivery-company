@@ -1,0 +1,190 @@
+openapi: "3.0.0"
+info:
+  title: Delivery Management API
+  version: 1.0.0
+paths:
+  /api/orders:
+    post:
+      summary: Place a new order
+      operationId: placeOrder
+      responses:
+        200:
+          description: Successful operation
+
+  /api/orders/{orderId}:
+    get:
+      summary: Retrieve order details by order ID
+      operationId: getOrderById
+      parameters:
+        - name: orderId
+          in: path
+          description: ID of the order to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+
+    delete:
+      summary: Cancel an order by order ID
+      operationId: cancelOrderById
+      parameters:
+        - name: orderId
+          in: path
+          description: ID of the order to cancel
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+
+  /api/customers/{customerId}/orders:
+    get:
+      summary: Retrieve order history for a specific user
+      operationId: getOrderHistory
+      parameters:
+        - name: customerId
+          in: path
+          description: ID of the customer
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+
+  /api/customers:
+    get:
+      summary: Get a list of all customers
+      operationId: getAllCustomers
+      responses:
+        200:
+          description: Successful operation
+
+    post:
+      summary: Add a new customer
+      operationId: addCustomer
+      responses:
+        200:
+          description: Successful operation
+
+  /api/customers/{id}:
+    get:
+      summary: Get details of a specific customer
+      operationId: getCustomerById
+      parameters:
+        - name: id
+          in: path
+          description: ID of the customer to retrieve
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+
+    put:
+      summary: Update an existing customer
+      operationId: updateCustomer
+      parameters:
+        - name: id
+          in: path
+          description: ID of the customer to update
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+
+    delete:
+      summary: Delete a customer
+      operationId: deleteCustomer
+      parameters:
+        - name: id
+          in: path
+          description: ID of the customer to delete
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+
+  /api/orders/{orderId}/tracking:
+    get:
+      summary: Retrieve real-time tracking information for an order
+      operationId: getOrderTracking
+      parameters:
+        - name: orderId
+          in: path
+          description: ID of the order to retrieve tracking information
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+
+    put:
+      summary: Update the status and location of an order during delivery
+      operationId: updateOrderTracking
+      parameters:
+        - name: orderId
+          in: path
+          description: ID of the order to update tracking information
+          required: true
+          schema:
+            type: string
+      responses:
+        200:
+          description: Successful operation
+
+components:
+  schemas:
+    Customer:
+      type: object
+      properties:
+        customerId:
+          type: integer
+        firstName:
+          type: string
+        lastName:
+          type: string
+        email:
+          type: string
+
+    Order:
+      type: object
+      properties:
+        orderId:
+          type: integer
+        customerId:
+          type: integer
+        orderDate:
+          type: string
+          format: date
+        total:
+          type: number
+          format: double
+        status:
+          type: string
+        courierId:
+          type: integer
+        deliveryId:
+          type: integer
+
+    Tracking:
+      type: object
+      properties:
+        trackingId:
+          type: integer
+        orderId:
+          type: integer
+        deliveryDate:
+          type: string
+          format: date
+        status:
+          type: string
