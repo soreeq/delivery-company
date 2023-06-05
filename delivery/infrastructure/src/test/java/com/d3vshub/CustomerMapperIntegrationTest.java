@@ -4,10 +4,14 @@ import com.d3vshub.dto.CustomerDTO;
 import com.d3vshub.mappers.CustomerMapper;
 import com.d3vshub.model.Customer;
 import org.junit.Test;
+import org.junit.runner.RunWith;
 import org.mapstruct.factory.Mappers;
+import org.springframework.boot.test.context.SpringBootTest;
+import org.springframework.test.context.junit4.SpringRunner;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;
-
+@RunWith(SpringRunner.class)
+@SpringBootTest
 public class CustomerMapperIntegrationTest {
     private CustomerMapper mapper = Mappers.getMapper(CustomerMapper.class);
 

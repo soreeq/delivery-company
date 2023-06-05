@@ -12,7 +12,6 @@ import org.springframework.test.context.junit4.SpringRunner;
 import java.sql.Date;
 
 @RunWith(SpringRunner.class)
-@ContextConfiguration(locations={"classpath:WEB-INF/application-context.xml"})
 @DataJpaTest
 public class OrderRepositoryIntegrationTest {
     @Autowired
