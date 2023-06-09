@@ -9,4 +9,5 @@ import java.util.List;
 @Repository
 public interface CourierRepository extends JpaRepository<Courier, Long> {
     Courier findById(int courierId);
+    List<Courier> findAll();
 }
