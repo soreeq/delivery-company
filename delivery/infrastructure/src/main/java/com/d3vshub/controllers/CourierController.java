@@ -8,6 +8,8 @@ import com.d3vshub.services.CourierService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
+import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
@@ -21,5 +23,10 @@ public class CourierController implements CourierApi {
     @GetMapping("/api/get/couriers")
     public List<Courier> showAllCouriers() {
         return courierService.getAllCouriers();
+    }
+
+    @GetMapping("/api/get/courier/{id}")
+    public Courier getCourierById(@PathVariable int id){
+        return courierService.getCourierById(id);
     }
 }
