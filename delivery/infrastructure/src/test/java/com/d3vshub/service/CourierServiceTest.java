@@ -1,5 +1,6 @@
-package com.d3vshub;
+package com.d3vshub.service;
 
+import com.d3vshub.ApplicationConfig;
 import com.d3vshub.model.Courier;
 import com.d3vshub.repository.CourierRepository;
 import org.junit.Test;

@@ -1,4 +1,4 @@
-package com.d3vshub;
+package com.d3vshub.controllers;
 
 import com.d3vshub.model.Courier;
 import com.fasterxml.jackson.databind.ObjectMapper;

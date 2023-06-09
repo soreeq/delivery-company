@@ -1,4 +1,4 @@
-package com.d3vshub;
+package com.d3vshub.controllers;
 
 import org.junit.Assert;
 import org.junit.jupiter.api.BeforeEach;
