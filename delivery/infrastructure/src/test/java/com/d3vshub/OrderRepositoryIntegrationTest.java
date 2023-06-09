@@ -8,11 +8,13 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
+import org.springframework.test.context.web.WebAppConfiguration;
 
 import java.sql.Date;
 
 @RunWith(SpringRunner.class)
-@DataJpaTest
+@ContextConfiguration(classes = {ApplicationConfig.class})
+@WebAppConfiguration
 public class OrderRepositoryIntegrationTest {
     @Autowired
     private OrderRepository orderRepository;
