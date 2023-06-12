@@ -1,4 +1,5 @@
-drop table if exists couriers;
-drop table if exists delivery;
-drop table if exists orders;
-drop table if exists tracking;
+DROP TABLE IF EXISTS orders;
+DROP TABLE IF EXISTS customers;
+DROP TABLE IF EXISTS couriers;
+DROP TABLE IF EXISTS delivery;
+DROP TABLE IF EXISTS tracking;

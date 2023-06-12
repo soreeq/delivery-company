@@ -20,12 +20,12 @@ public class CourierController implements CourierApi {
     @Autowired
     CourierService courierService;
     @Override
-    @GetMapping("/api/get/couriers")
+    @GetMapping("/api/courier")
     public List<Courier> showAllCouriers() {
         return courierService.getAllCouriers();
     }
 
-    @GetMapping("/api/get/courier/{id}")
+    @GetMapping("/api/courier/{id}")
     public Courier getCourierById(@PathVariable int id){
         return courierService.getCourierById(id);
     }

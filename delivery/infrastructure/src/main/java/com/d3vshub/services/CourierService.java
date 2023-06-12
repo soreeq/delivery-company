@@ -22,7 +22,7 @@ public class CourierService {
         return courierRepository.findAll();
     }
 
-    public Courier getCourierById(@RequestParam int id) {
+    public Courier getCourierById(int id) {
         return courierRepository.findById(id);
     }
 }

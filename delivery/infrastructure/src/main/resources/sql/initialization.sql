@@ -1,4 +1,3 @@
--- Wstawianie danych do tabeli Customers
 INSERT INTO Customers (customer_id, first_name, last_name, email)
 VALUES
 (1, 'John', 'Doe', 'john.doe@example.com'),
@@ -12,7 +11,6 @@ VALUES
 (9, 'William', 'Wilson', 'william.wilson@example.com'),
 (10, 'Ava', 'Anderson', 'ava.anderson@example.com');
 
--- Wstawianie danych do tabeli Couriers
 INSERT INTO Couriers (courier_id, name, phone_number)
 VALUES
 (1, 'Courier A', '123456789'),
@@ -26,7 +24,6 @@ VALUES
 (9, 'Courier I', '258369147'),
 (10, 'Courier J', '741852963');
 
--- Wstawianie danych do tabeli Delivery
 INSERT INTO Delivery (delivery_id, address, city, postal_code)
 VALUES
 (1, '123 Main St', 'New York', '10001'),
@@ -40,7 +37,6 @@ VALUES
 (9, '369 Pineapple St', 'San Francisco', '94101'),
 (10, '741 Orange St', 'Dallas', '75201');
 
--- Wstawianie danych do tabeli Orders
 INSERT INTO Orders (order_id, customer_id, order_date, total, status, courier_id, delivery_id)
 VALUES
 (1, 1, '2023-06-01', 100.00, 'Shipped', 1, 1),
@@ -54,7 +50,6 @@ VALUES
 (9, 9, '2023-06-09', 210.00, 'Pending', 9, 9),
 (10, 10, '2023-06-10', 400.00, 'Shipped', 10, 10);
 
--- Wstawianie danych do tabeli Tracking
 INSERT INTO Tracking (tracking_id, order_id, delivery_date, status)
 VALUES
 (1, 1, '2023-06-02', 'In transit'),

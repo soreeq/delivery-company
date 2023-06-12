@@ -11,6 +11,7 @@ import org.junit.runner.RunWith;
 import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.jdbc.Sql;
 import org.springframework.test.context.jdbc.SqlGroup;
@@ -23,16 +24,18 @@ import org.springframework.test.web.servlet.result.MockMvcResultMatchers;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.post;
 
-@RunWith(SpringRunner.class)
 @ContextConfiguration(classes = {ApplicationConfig.class})
 @WebAppConfiguration
 @AutoConfigureMockMvc
 @SqlGroup({
         @Sql(executionPhase = Sql.ExecutionPhase.BEFORE_TEST_METHOD, scripts = {
-                "/sql/initialization.sql"
+                "/sql/drop_schema.sql",
+                "/sql/create_schema.sql",
+                "/sql/initialization.sql",
         })
 })
-
+@SpringBootTest
+@RunWith(SpringRunner.class)
 public class OrderRepositoryIntegrationTest {
     @Autowired
     private OrderRepository orderRepository;
@@ -47,7 +50,7 @@ public class OrderRepositoryIntegrationTest {
     public void shouldReturnOrder() throws Exception {
         orderRepository.findById(1);
 
-        MvcResult mvcResult = mockMvc.perform(get("/api/orders")).andExpect(MockMvcResultMatchers.status().is2xxSuccessful()).andReturn();
+        MvcResult mvcResult = mockMvc.perform(get("/api/order")).andExpect(MockMvcResultMatchers.status().is2xxSuccessful()).andReturn();
 
         Order[] orders = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), Order[].class);
 
