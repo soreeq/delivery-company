@@ -1,9 +1,5 @@
 package com.d3vshub;
 
-import com.d3vshub.repository.CustomerRepository;
-import com.d3vshub.services.CourierService;
-import com.d3vshub.services.CustomerService;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.EnableAutoConfiguration;
 import org.springframework.boot.autoconfigure.SpringBootApplication;

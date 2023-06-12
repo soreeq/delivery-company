@@ -25,6 +25,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        404:
+          description: Order not found
+        500:
+          description: Internal server error
 
     delete:
       summary: Cancel an order by order ID
@@ -39,6 +43,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        404:
+          description: Order not found
+        500:
+          description: Internal server error
 
   /api/customers/{customerId}/orders:
     get:
@@ -54,6 +62,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        404:
+          description: Order not found
+        500:
+          description: Internal server error
 
   /api/customers:
     get:
@@ -62,6 +74,8 @@ paths:
       responses:
         200:
           description: Successful operation
+        500:
+          description: Internal server error
 
     post:
       summary: Add a new customer
@@ -69,6 +83,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        400:
+          description: Bad request
+        500:
+          description: Internal server error
 
   /api/customers/{id}:
     get:
@@ -84,6 +102,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        404:
+          description: Customer not found
+        500:
+          description: Internal server error
 
     put:
       summary: Update an existing customer
@@ -98,6 +120,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        404:
+          description: Customer not found
+        500:
+          description: Internal server error
 
     delete:
       summary: Delete a customer
@@ -112,6 +138,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        404:
+          description: Customer not found
+        500:
+          description: Internal server error
 
   /api/orders/{orderId}/tracking:
     get:
@@ -127,6 +157,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        404:
+          description: Customer not found
+        500:
+          description: Internal server error
 
     put:
       summary: Update the status and location of an order during delivery
@@ -141,6 +175,10 @@ paths:
       responses:
         200:
           description: Successful operation
+        404:
+          description: Customer not found
+        500:
+          description: Internal server error
 
 components:
   schemas:

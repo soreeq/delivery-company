@@ -1,6 +1,5 @@
 package com.d3vshub.controllers;
 
-import com.d3vshub.api.OrderApi;
 import com.d3vshub.model.Order;
 import com.d3vshub.openapi.api.ApiApiDelegate;
 import com.d3vshub.services.OrderService;
@@ -14,7 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 import java.util.List;
 
 @RestController
-public class OrderController implements OrderApi, ApiApiDelegate {
+public class OrderController implements ApiApiDelegate {
 
     @Autowired
     private OrderService orderService;
@@ -29,7 +28,6 @@ public class OrderController implements OrderApi, ApiApiDelegate {
     public Order findOrderById(@PathVariable int id){
         return orderService.findById(id);
     }
-    @Override
     @PostMapping("/api/order/new")
     public ResponseEntity<Void> createOrder(Order order) {
         orderService.addOrder(order);
