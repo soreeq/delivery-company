@@ -1,18 +1,18 @@
 package com.d3vshub.model;
 
-import lombok.AllArgsConstructor;
+import org.hibernate.annotations.GenericGenerator;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
-import javax.persistence.Table;
+import javax.persistence.*;
+import java.util.UUID;
 
 @Entity
 @Table(name = "Couriers")
 public class Courier {
     @Id
+    @GeneratedValue(generator = "UUID")
+    @GenericGenerator(name = "UUID", strategy = "org.hibernate.id.UUIDGenerator")
     @Column(name = "courier_id")
-    private int id;
+    private UUID id;
     private String name;
     @Column(name = "phone_number")
     private String phone;
@@ -20,17 +20,22 @@ public class Courier {
     public Courier() {
     }
 
-    public Courier(int id, String name, String phone) {
+    public Courier(String name, String phone) {
+        this.name = name;
+        this.phone = phone;
+    }
+
+    public Courier(UUID id, String name, String phone) {
         this.id = id;
         this.name = name;
         this.phone = phone;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

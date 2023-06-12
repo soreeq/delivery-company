@@ -1,24 +1,26 @@
 package com.d3vshub.dto;
 
+import java.util.UUID;
+
 public class CourierDTO {
-    private int id;
+    private UUID id;
     private String name;
     private String phone;
 
     public CourierDTO() {
     }
 
-    public CourierDTO(int id, String name, String phone) {
+    public CourierDTO(UUID id, String name, String phone) {
         this.id = id;
         this.name = name;
         this.phone = phone;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

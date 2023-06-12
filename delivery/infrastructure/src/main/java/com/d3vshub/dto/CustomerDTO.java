@@ -1,7 +1,9 @@
 package com.d3vshub.dto;
 
+import java.util.UUID;
+
 public class CustomerDTO {
-    private int id;
+    private UUID id;
     private String first_name;
     private String last_name;
     private String email;
@@ -9,18 +11,18 @@ public class CustomerDTO {
     public CustomerDTO() {
     }
 
-    public CustomerDTO(int i, String name, String secondname, String email) {
+    public CustomerDTO(UUID i, String name, String last_name, String email) {
         this.id = i;
         this.first_name = name;
-        this.last_name = secondname;
+        this.last_name = last_name;
         this.email = email;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

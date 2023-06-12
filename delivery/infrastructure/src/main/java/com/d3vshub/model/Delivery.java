@@ -3,6 +3,7 @@ package com.d3vshub.model;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import java.util.UUID;
 
 @Entity
 public class Delivery {
@@ -11,23 +12,23 @@ public class Delivery {
 
     @Id
     @Column(name = "delivery_id")
-    private int id;
+    private UUID id;
     private String address;
     private String city;
     private String postal_code;
 
-    public Delivery(int id, String address, String city, String postalCode) {
+    public Delivery(UUID id, String address, String city, String postalCode) {
         this.id = id;
         this.address = address;
         this.city = city;
         this.postal_code = postalCode;
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

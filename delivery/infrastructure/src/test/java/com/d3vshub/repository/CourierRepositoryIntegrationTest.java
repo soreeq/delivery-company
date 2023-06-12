@@ -33,7 +33,7 @@ public class CourierRepositoryIntegrationTest {
 
     @Test
     public void whenCalledSave_thenCorrectNumberOfCouriers(){
-        Courier courier = new Courier(1, "TEST", "222");
+        Courier courier = new Courier( "TEST", "222");
         courierRepository.save(courier);
         System.out.println(courier + "test czy to dziala" +
                 "");

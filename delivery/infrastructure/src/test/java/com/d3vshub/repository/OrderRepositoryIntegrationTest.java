@@ -48,12 +48,12 @@ public class OrderRepositoryIntegrationTest {
 
     @Test
     public void shouldReturnOrder() throws Exception {
-        orderRepository.findById(1);
+        orderRepository.findByStatus("Shipped");
 
         MvcResult mvcResult = mockMvc.perform(get("/api/order")).andExpect(MockMvcResultMatchers.status().is2xxSuccessful()).andReturn();
 
         Order[] orders = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), Order[].class);
 
-        Assertions.assertEquals(1, orders[0].getId());
+        Assertions.assertNotNull(orders[0].getId());
     }
 }

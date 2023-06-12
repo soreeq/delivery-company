@@ -25,4 +25,8 @@ public class OrderService {
     public Order findById(int id) {
         return orderRepository.findById(id);
     }
+
+    public Order findByStatus(String status){
+        return orderRepository.findByStatus(status);
+    }
 }

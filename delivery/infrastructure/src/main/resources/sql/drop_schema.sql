@@ -1,5 +1,14 @@
-DROP TABLE IF EXISTS orders;
-DROP TABLE IF EXISTS customers;
-DROP TABLE IF EXISTS couriers;
-DROP TABLE IF EXISTS delivery;
-DROP TABLE IF EXISTS tracking;
+-- Usunięcie tabeli Tracking
+DROP TABLE IF EXISTS Tracking;
+
+-- Usunięcie tabeli Orders
+DROP TABLE IF EXISTS Orders;
+
+-- Usunięcie tabeli Delivery
+DROP TABLE IF EXISTS Delivery;
+
+-- Usunięcie tabeli Couriers
+DROP TABLE IF EXISTS Couriers;
+
+-- Usunięcie tabeli Customers
+DROP TABLE IF EXISTS Customers;

@@ -49,6 +49,6 @@ public class CourierControllerIntegrationTest {
 
         Courier[] couriers = objectMapper.readValue(mvcResult.getResponse().getContentAsString(), Courier[].class);
 
-        Assertions.assertEquals(1, couriers[0].getId());
+        Assertions.assertNotNull(couriers[0].getId());
     }
 }

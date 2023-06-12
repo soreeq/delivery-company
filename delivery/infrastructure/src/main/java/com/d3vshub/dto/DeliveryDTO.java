@@ -1,12 +1,14 @@
 package com.d3vshub.dto;
 
+import java.util.UUID;
+
 public class DeliveryDTO {
-    private int id;
+    private UUID id;
     private String address;
     private String city;
     private String postal_code;
 
-    public DeliveryDTO(int id, String address, String city, String postalCode) {
+    public DeliveryDTO(UUID id, String address, String city, String postalCode) {
         this.id = id;
         this.address = address;
         this.city = city;
@@ -16,11 +18,11 @@ public class DeliveryDTO {
     public DeliveryDTO() {
 
     }
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 

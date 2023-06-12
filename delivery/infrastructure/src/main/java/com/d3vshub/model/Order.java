@@ -5,25 +5,26 @@ import javax.persistence.Entity;
 import javax.persistence.Id;
 import javax.persistence.Table;
 import java.sql.Date;
+import java.util.UUID;
 
 @Entity
 @Table(name="Orders")
 public class Order {
     @Id
     @Column(name = "order_id")
-    private int id;
-    private int customer_id;
+    private UUID id;
+    private UUID customer_id;
     private Date order_date;
 
     private Double total;
     private String status;
-    private int courier_id;
-    private int delivery_id;
+    private UUID courier_id;
+    private UUID delivery_id;
 
     public Order() {
     }
 
-    public Order(int order_id, Customer customer, Date localDate, Double decimal, String status, Courier courier, Delivery delivery) {
+    public Order(UUID order_id, Customer customer, Date localDate, Double decimal, String status, Courier courier, Delivery delivery) {
         this.id = order_id;
         this.customer_id = customer.getId();
         this.order_date = localDate;
@@ -33,19 +34,19 @@ public class Order {
         this.delivery_id = delivery.getId();
     }
 
-    public int getId() {
+    public UUID getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(UUID id) {
         this.id = id;
     }
 
-    public int getCustomer_id() {
+    public UUID getCustomer_id() {
         return customer_id;
     }
 
-    public void setCustomer_id(int customer_id) {
+    public void setCustomer_id(UUID customer_id) {
         this.customer_id = customer_id;
     }
 
@@ -73,19 +74,19 @@ public class Order {
         this.status = status;
     }
 
-    public int getCourier_id() {
+    public UUID getCourier_id() {
         return courier_id;
     }
 
-    public void setCourier_id(int courier_id) {
+    public void setCourier_id(UUID courier_id) {
         this.courier_id = courier_id;
     }
 
-    public int getDelivery_id() {
+    public UUID getDelivery_id() {
         return delivery_id;
     }
 
-    public void setDelivery_id(int delivery_id) {
+    public void setDelivery_id(UUID delivery_id) {
         this.delivery_id = delivery_id;
     }
 }

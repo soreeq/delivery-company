@@ -32,4 +32,9 @@ public class CustomerController implements CustomerApi {
         customerService.addCustomer(customer);
         return ResponseEntity.ok().build();
     }
+
+    @GetMapping("/api/customer/{firstName}")
+    public Customer getCustomerByFirstName(@PathVariable String firstName) {
+        return customerService.findByFirstName(firstName);
+    }
 }
