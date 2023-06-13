@@ -1,6 +1,6 @@
 //package com.d3vshub.service;
 //
-//import com.d3vshub.ApplicationConfig;
+//import com.d3vshub.config.ApplicationConfig;
 //import com.d3vshub.model.Customer;
 //import com.d3vshub.repository.CustomerRepository;
 //import org.junit.Test;

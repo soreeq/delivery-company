@@ -1,12 +1,12 @@
 package com.d3vshub;
 
+import com.d3vshub.config.ApplicationConfig;
 import com.d3vshub.dto.CustomerDTO;
 import com.d3vshub.mappers.CustomerMapper;
 import com.d3vshub.model.Customer;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.mapstruct.factory.Mappers;
-import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.ContextConfiguration;
 import org.springframework.test.context.junit4.SpringRunner;
 import org.springframework.test.context.web.WebAppConfiguration;

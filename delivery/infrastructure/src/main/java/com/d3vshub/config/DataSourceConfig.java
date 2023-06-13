@@ -1,4 +1,4 @@
-package com.d3vshub;
+package com.d3vshub.config;
 
 import org.springframework.boot.jdbc.DataSourceBuilder;
 import org.springframework.context.annotation.Bean;

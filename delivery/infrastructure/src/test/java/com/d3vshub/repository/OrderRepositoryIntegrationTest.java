@@ -1,14 +1,11 @@
 package com.d3vshub.repository;
 
-import com.d3vshub.ApplicationConfig;
-import com.d3vshub.model.Courier;
+import com.d3vshub.config.ApplicationConfig;
 import com.d3vshub.model.Order;
-import com.d3vshub.repository.OrderRepository;
 import com.fasterxml.jackson.databind.ObjectMapper;
 import org.junit.Test;
 import org.junit.jupiter.api.Assertions;
 import org.junit.runner.RunWith;
-import org.mockito.Mock;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
 import org.springframework.boot.test.context.SpringBootTest;

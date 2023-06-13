@@ -1,6 +1,6 @@
 //package com.d3vshub.service;
 //
-//import com.d3vshub.ApplicationConfig;
+//import com.d3vshub.config.ApplicationConfig;
 //import com.d3vshub.model.Delivery;
 //import com.d3vshub.repository.DeliveryRepository;
 //import org.junit.Test;
